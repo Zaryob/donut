@@ -11,11 +11,9 @@ Just for enjoy :joy:
 How to use it
 -------------
 
+![Ohom ohom](tty.gif)
 
 ```shell
     $ git clone https://github.com/Zaryob/donut
     $ cd donut
     $ cargo run
-
-![Ohom ohom](tty.gif)
-
