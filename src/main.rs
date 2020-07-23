@@ -7,11 +7,9 @@ fn main() {
     loop {
         A += 0.07;
         B += 0.03;
-        let (sinA, cosA, sinB, cosB, mut b) = (
-            A.sin(),
-            A.cos(),
-            B.sin(),
-            B.cos(),
+        let ((sinA, cosA), (sinB, cosB), mut b) = (
+            A.sin_cos(),
+            B.sin_cos(),
             [' '; 1760],);
 
         let (mut z, mut j): ([f64; 1760], f64) =(
@@ -19,10 +17,10 @@ fn main() {
             0.0,
         );
         while j <= 6.28 {
-            let (u, v) = (j.sin(),j.cos());
+            let (u, v) = (j.sin_cos());
             let mut i: f64 = 0.0;
             while i <= 6.28 {
-                let (w, c) = (i.sin(), i.cos());
+                let (w, c) = (i.sin_cos());
                 let h = v + 2.0;
                 let (d, t) = (1.0 / (w * h * sinA + u * cosA + 5.0), w * h * cosA - u * sinA);
                 let (x, y) = (
