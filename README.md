@@ -17,3 +17,4 @@ How to use it
     $ git clone https://github.com/Zaryob/donut
     $ cd donut
     $ cargo run
+
